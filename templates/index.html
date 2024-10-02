@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduM8 - Study Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>How can I help with your studies today?</h1>
+        
+        <!-- Task Selection Form -->
+        <form action="/ask" method="POST">
+            
+            <!-- Input for the user to type their question -->
+            <label for="question">Type your question:</label><br>
+            <input type="text" name="question" id="question" placeholder="E.g., Solve 2x + 3 = 7 or Wikipedia topic search" required><br><br>
+
+            <!-- Radio buttons for task type selection -->
+            <label>Select the type of task:</label><br>
+            
+            <input type="radio" id="math" name="task_type" value="math" required>
+            <label for="math">Math Solver</label><br>
+            
+            <input type="radio" id="english" name="task_type" value="english" required>
+            <label for="english">English Assistance</label><br>
+
+            <input type="radio" id="wikipedia" name="task_type" value="wikipedia" required>
+            <label for="wikipedia">Wikipedia Search</label><br><br>
+
+            <!-- Submit button -->
+            <button type="submit">Ask</button>
+        </form>
+    </div>
+</body>
+</html>
